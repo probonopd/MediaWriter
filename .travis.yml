@@ -17,7 +17,7 @@ script:
   - make INSTALL_ROOT=appdir -j$(nproc) install ; find app/appdir/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-  - ./linuxdeployqt-continuous-x86_64.AppImage app/appdir/usr/share/applications/*.desktop -appimage -verbose=2 -qml=app/appdir/
+  - ./linuxdeployqt-continuous-x86_64.AppImage app/appdir/usr/share/applications/*.desktop -appimage -verbose=2 -qmldir=app/appdir/
 
 after_success:
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
